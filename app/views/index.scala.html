@@ -1,0 +1,31 @@
+@(sense: Set[movie])
+@import java.util
+@import models.movie
+@import views.html.bootstrap._
+
+@main("Produced"){
+    <head>
+        <style type="text/css">
+            body{
+                background-color: thistle;
+            }
+        </style>
+        <title>All Movies</title>
+
+    </head>
+    <body>
+
+        <h1><center><br>All Movies we produced...</center></h1><hr>
+        <center>
+        @for(mov <- sense){
+            <a href="#">
+                <br>
+                @mov.title
+            </a>
+            <p>Writer : @mov.writer</p>
+            <p>Id     : @mov.id</p>
+        }
+        </center>
+
+    </body>
+}
